@@ -4,6 +4,7 @@ A housing market analysis of West Midlands Local Authorities in England &amp; Wa
 ## 📊 Dashboard Preview
 <img width="632" height="334" alt="image" src="https://github.com/user-attachments/assets/263ca286-571d-40c3-a9d7-f92ee29893b9" />
 
+<img width="678" height="373" alt="image" src="https://github.com/user-attachments/assets/0a8558cd-1fc9-48dc-977c-83497efbc799" />
 
 ## 🗂️ Dataset
 **Source:** HM Land Registry — House Price Statistics for Small Areas in England and Wales  
