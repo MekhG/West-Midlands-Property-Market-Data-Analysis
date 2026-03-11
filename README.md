@@ -73,7 +73,10 @@ housing-market-analysis/
 │
 ├── excel/
 │   └── housing_analysis.xlsx
-│
+|
+├── sql/
+│   └── housing_data_queries.ipynb
+|
 ├── dashboard/
 │   └── housing_dashboard.pbix
 │
