@@ -61,7 +61,7 @@ A housing market analysis of West Midlands Local Authorities in England &amp; Wa
   - Price Trend and Sales Comparison grouped bar chart
   - Price and Sales Forecast with linear trend lines
   - Slicers: Geography, Property Type, Build Status, Year, Month
-  - **SQL (SQLite via Python/Kaggle)** — Price Trend Exploration, YoY %, Sales per year, median price etc.
+- **SQL (SQLite via Python/Kaggle)** — Price Trend Exploration, YoY %, Sales per year, median price etc.
 
 ---
 
@@ -106,5 +106,6 @@ housing-market-analysis/
 ## 🚀 How to Run
 1. Clone the repo
 2. Open `excel/housing_analysis.xlsx` for EDA
-3. Open `dashboard/housing_dashboard.pbix` in Power BI Desktop
-4. Use Geography, Property Type, Build Status, Year, and Month slicers to explore
+3. Open `sql/housing_data_queries.ipynb` on Python for SQL queries
+4. Open `dashboard/housing_dashboard.pbix` in Power BI Desktop
+5. Use Geography, Property Type, Build Status, Year, and Month slicers to explore
