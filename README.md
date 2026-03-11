@@ -61,6 +61,7 @@ A housing market analysis of West Midlands Local Authorities in England &amp; Wa
   - Price Trend and Sales Comparison grouped bar chart
   - Price and Sales Forecast with linear trend lines
   - Slicers: Geography, Property Type, Build Status, Year, Month
+  - **SQL (SQLite via Python/Kaggle)** — Price Trend Exploration, YoY %, Sales per year, median price etc.
 
 ---
 
