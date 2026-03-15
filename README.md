@@ -70,10 +70,31 @@ This project provides a comprehensive analysis of the housing market across West
 - Sales counts expected to recover moderately.  
 
 ## Business Insights and Recommendations
-- **Investors:** Consider Solihull for high growth potential; monitor Birmingham for volume-based opportunities.  
-- **Policy Makers:** Monitor affordability trends, especially for first-time buyers.  
-- **Developers:** Prioritize newly built properties due to consistent price premiums.  
-- **Market Strategy:** Use dynamic dashboards to track monthly price trends and plan buying/selling strategies accordingly.  
+
+**For Home Buyers / First-Time Buyers:**  
+- **Target affordability:** Focus on areas with lower median prices or slower growth (e.g., Dudley, Walsall) to enter the market without overpaying.  
+- **Consider newly built properties:** These generally command a premium but offer modern amenities and long-term value.  
+- **Monitor forecast trends:** Lower quartile prices are projected to rise; first-time buyers may need to act sooner to secure more affordable options.  
+
+**For Property Investors:**  
+- **High-growth opportunities:** Invest in **Solihull**, which saw +44.8% growth, or other areas showing consistent upward trends.  
+- **Volume-driven strategy:** Birmingham has the highest transaction count; high liquidity reduces risk for resale or rental purposes.  
+- **Diversify across property types:** Detached and semi-detached homes show strong growth trends; consider balancing portfolio across types.  
+
+**For Developers / Builders:**  
+- **Focus on premium builds:** Newly built homes consistently command higher prices — targeting high-demand areas maximizes ROI.  
+- **Plan inventory based on market trends:** High-demand LAs with rapid price growth require careful planning to match supply with buyer affordability.  
+- **Future-proof properties:** Integrate energy efficiency and modern amenities to justify higher pricing as market demand evolves.  
+
+**For Policymakers / Urban Planners:**  
+- **Address affordability:** Monitor forecasted price increases to support first-time buyers with incentives or housing schemes.  
+- **Urban development planning:** Prioritize infrastructure and housing support in high-growth areas like Solihull to sustain market balance.  
+- **Track transaction trends:** COVID-19 caused temporary dips; understanding volume changes helps plan for future market shocks.  
+
+**Actionable Dashboard Insights:**  
+- Use slicers to explore price trends by **Local Authority, Property Type, Build Status, and Month**.  
+- Compare YoY % change across areas to identify emerging growth pockets.  
+- Forecast trends help anticipate affordability challenges and plan investment or development strategies. 
 
 
 ## How to Run
