@@ -1,7 +1,9 @@
 # West Midlands Property Market Data Analysis
 
 ## Introduction / Description
-This project provides a comprehensive analysis of the housing market across West Midlands Local Authorities in England and Wales from 2015 to 2021. Using official HM Land Registry Price Paid Data, it examines median house prices, sales volumes, and year-on-year price changes, with a forecast extending to 2024. The analysis is broken down by geography, property type, build status, and month, offering insights into trends and market dynamics in the region.
+This project provides a comprehensive analysis of the housing market across West Midlands Local Authorities in England and Wales from 2015 to 2021. Using official HM Land Registry Price Paid Data, it examines median house prices, sales volumes, and year-on-year price changes, with a forecast extending to 2024. The analysis is broken down by geography, property type, build status, and month, offering insights into trends and market dynamics in the region. 
+
+A detailed presentation with insights and recommendations is presented through West Midlands Property Market pdf
 
 ## Dashboard Preview
 <img width="632" height="334" alt="image" src="https://github.com/user-attachments/assets/263ca286-571d-40c3-a9d7-f92ee29893b9" />
