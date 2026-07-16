@@ -102,7 +102,7 @@ A detailed presentation with insights and recommendations is presented through W
 ## How to Run
 1. Clone the repository:  
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/MekhG/West-Midlands-Property-Market-Data-Analysis
 
 2. Explore data in Excel: housing_analysis.xlsx
 3. Run SQL queries in Python: housing_data_queries.ipynb
