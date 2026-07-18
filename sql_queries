@@ -1,15 +1,9 @@
-  
 import pandas as pd
 import duckdb
 
 df_housing = pd.read_excel('HouseBook.xlsx')
 df_housing.head()
 
-duckdb.query("CREATE OR REPLACE TABLE housing AS SELECT * FROM df_housing")
-
-duckdb.query("CREATE OR REPLACE TABLE housing AS SELECT * FROM df_housing")
-
-import duckdb
 
 duckdb.query("""
 CREATE OR REPLACE TABLE housing_clean AS
@@ -20,7 +14,8 @@ FROM housing
 
 duckdb.query("SELECT Value, Value_num FROM housing_clean LIMIT 20").to_df()
 
-query1 = """
+
+yearly_sales_sql = """
 SELECT Year,
        SUM(Value_num) AS total_sales
 FROM housing_clean
@@ -28,34 +23,11 @@ WHERE HouseSalesAndPrices = 'Count of sales'
 GROUP BY Year
 ORDER BY Year
 """
-result1 = duckdb.query(query1).to_df()
-print(result1)
-
-import duckdb
-
-duckdb.query("""
-CREATE OR REPLACE TABLE housing_clean AS
-SELECT *,
-       TRY_CAST(NULLIF(Value, '.') AS DOUBLE) AS Value_num
-FROM housing
-""")
+yearly_sales = duckdb.query(yearly_sales_sql).to_df()
+print(yearly_sales)
 
 
-query1 = """
-SELECT Year,
-       SUM(Value_num) AS total_sales
-FROM housing_clean
-WHERE HouseSalesAndPrices = 'Count of sales'
-GROUP BY Year
-ORDER BY Year
-"""
-result1 = duckdb.query(query1).to_df()
-print("Total sales per year")
-print(result1)
-
-
-
-query2 = """
+mean_price_sql = """
 SELECT Year,
        ROUND(AVG(Value_num),0) AS avg_mean_price
 FROM housing_clean
@@ -63,13 +35,13 @@ WHERE HouseSalesAndPrices = 'Mean price'
 GROUP BY Year
 ORDER BY Year
 """
-result2 = duckdb.query(query2).to_df()
+mean_price = duckdb.query(mean_price_sql).to_df()
 print("\n Average mean price per year")
-print(result2)
+print(mean_price)
 
 
 
-query3 = """
+lower_quartile_sql = """
 SELECT Year,
        ROUND(AVG(Value_num),0) AS avg_lower_quartile_price
 FROM housing_clean
@@ -77,12 +49,12 @@ WHERE HouseSalesAndPrices = 'Lower quartile price'
 GROUP BY Year
 ORDER BY Year
 """
-result3 = duckdb.query(query3).to_df()
+lower_quartile = duckdb.query(lower_quartile_sql).to_df()
 print("\n Average lower quartile price per year")
-print(result3)
+print(lower_quartile)
 
 
-query4 = """
+median_price_sql = """
 SELECT Year,
        ROUND(AVG(Value_num),0) AS avg_median_price
 FROM housing_clean
@@ -90,13 +62,13 @@ WHERE HouseSalesAndPrices = 'Median price'
 GROUP BY Year
 ORDER BY Year
 """
-result4 = duckdb.query(query4).to_df()
+median_price = duckdb.query(median_price_sql).to_df()
 print("\n Median price trend")
-print(result4)
+print(median_price)
 
 
 
-query5 = """
+sales_growth_sql = """
 SELECT Year,
        SUM(Value_num) AS total_sales,
        SUM(Value_num) - LAG(SUM(Value_num)) OVER (ORDER BY Year) AS yoy_growth
@@ -105,13 +77,12 @@ WHERE HouseSalesAndPrices = 'Count of sales'
 GROUP BY Year
 ORDER BY Year
 """
-result5 = duckdb.query(query5).to_df()
+sales_growth = duckdb.query(sales_growth_sql).to_df()
 print("\n Year-over-year sales growth")
-print(result5)
+print(sales_growth)
 
 
-
-query6 = """
+mean_price_growth_sql = """
 SELECT Year,
        ROUND(AVG(Value_num),0) AS avg_mean_price,
        (AVG(Value_num) - LAG(AVG(Value_num)) OVER (ORDER BY Year)) / LAG(AVG(Value_num)) OVER (ORDER BY Year) * 100 AS yoy_growth_pct
@@ -120,13 +91,13 @@ WHERE HouseSalesAndPrices = 'Mean price'
 GROUP BY Year
 ORDER BY Year
 """
-result6 = duckdb.query(query6).to_df()
+mean_price_growth = duckdb.query(mean_price_growth_sql).to_df()
 print("\n Year-over-year mean price growth (%)")
-print(result6)
+print(mean_price_growth)
 
 
 
-query7 = """
+property_price_sql = """
 SELECT PropertyType,
        HouseSalesAndPrices,
        ROUND(AVG(Value_num),0) AS avg_value
@@ -135,13 +106,13 @@ WHERE HouseSalesAndPrices IN ('Mean price','Median price','Lower quartile price'
 GROUP BY PropertyType, HouseSalesAndPrices
 ORDER BY PropertyType, HouseSalesAndPrices
 """
-result7 = duckdb.query(query7).to_df()
+property_price = duckdb.query(property_price_sql).to_df()
 print("\n Average prices by property type")
-print(result7)
+print(property_price)
 
 
 
-query8 = """
+top_sales_years_sql = """
 SELECT Year, SUM(Value_num) AS total_sales
 FROM housing_clean
 WHERE HouseSalesAndPrices = 'Count of sales'
@@ -149,13 +120,13 @@ GROUP BY Year
 ORDER BY total_sales DESC
 LIMIT 5
 """
-result8 = duckdb.query(query8).to_df()
+top_sales_years = duckdb.query(top_sales_years_sql).to_df()
 print("\n Top 5 years with highest sales")
-print(result8)
+print(top_sales_year)
 
 
 
-query9 = """
+price_gap_sql = """
 SELECT Year,
        AVG(CASE WHEN HouseSalesAndPrices='Mean price' THEN Value_num END) - 
        AVG(CASE WHEN HouseSalesAndPrices='Lower quartile price' THEN Value_num END) AS mean_minus_lower
@@ -163,13 +134,13 @@ FROM housing_clean
 GROUP BY Year
 ORDER BY Year
 """
-result9 = duckdb.query(query9).to_df()
+price_gap = duckdb.query(price_gap_sql).to_df()
 print("\n Price difference between mean and lower quartile")
-print(result9)
+print(price_gap)
 
 
 
-query10 = """
+median_price_rank_sql = """
 SELECT Year,
        AVG(Value_num) AS avg_median_price,
        RANK() OVER (ORDER BY AVG(Value_num) DESC) AS price_rank
@@ -178,6 +149,6 @@ WHERE HouseSalesAndPrices = 'Median price'
 GROUP BY Year
 ORDER BY price_rank
 """
-result10 = duckdb.query(query10).to_df()
+median_price_rank = duckdb.query(median_price_rank_sql).to_df()
 print("\n Ranking years by median price")
-print(result10)
+print(median_price_rank)
