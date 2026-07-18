@@ -4,12 +4,11 @@ import duckdb
 df_housing = pd.read_excel('HouseBook.xlsx')
 df_housing.head()
 
-
 duckdb.query("""
 CREATE OR REPLACE TABLE housing_clean AS
 SELECT *,
        TRY_CAST(NULLIF(Value, '.') AS DOUBLE) AS Value_num
-FROM housing
+FROM df_housing
 """)
 
 duckdb.query("SELECT Value, Value_num FROM housing_clean LIMIT 20").to_df()
