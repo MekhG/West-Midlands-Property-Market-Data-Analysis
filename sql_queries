@@ -1,12 +1,12 @@
+  
 import pandas as pd
+import duckdb
 
 df_housing = pd.read_excel('HouseBook.xlsx')
 df_housing.head()
 
 duckdb.query("CREATE OR REPLACE TABLE housing AS SELECT * FROM df_housing")
-  
-import pandas as pd
-import duckdb
+
 duckdb.query("CREATE OR REPLACE TABLE housing AS SELECT * FROM df_housing")
 
 import duckdb
