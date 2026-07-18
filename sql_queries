@@ -50,7 +50,7 @@ GROUP BY Year
 ORDER BY Year
 """
 result1 = duckdb.query(query1).to_df()
-print("1️⃣ Total sales per year")
+print("Total sales per year")
 print(result1)
 
 
@@ -64,7 +64,7 @@ GROUP BY Year
 ORDER BY Year
 """
 result2 = duckdb.query(query2).to_df()
-print("\n2️⃣ Average mean price per year")
+print("\n Average mean price per year")
 print(result2)
 
 
@@ -78,7 +78,7 @@ GROUP BY Year
 ORDER BY Year
 """
 result3 = duckdb.query(query3).to_df()
-print("\n3️⃣ Average lower quartile price per year")
+print("\n Average lower quartile price per year")
 print(result3)
 
 
@@ -91,7 +91,7 @@ GROUP BY Year
 ORDER BY Year
 """
 result4 = duckdb.query(query4).to_df()
-print("\n4️⃣ Median price trend")
+print("\n Median price trend")
 print(result4)
 
 
@@ -106,7 +106,7 @@ GROUP BY Year
 ORDER BY Year
 """
 result5 = duckdb.query(query5).to_df()
-print("\n5️⃣ Year-over-year sales growth")
+print("\n Year-over-year sales growth")
 print(result5)
 
 
@@ -121,7 +121,7 @@ GROUP BY Year
 ORDER BY Year
 """
 result6 = duckdb.query(query6).to_df()
-print("\n6️⃣ Year-over-year mean price growth (%)")
+print("\n Year-over-year mean price growth (%)")
 print(result6)
 
 
@@ -136,7 +136,7 @@ GROUP BY PropertyType, HouseSalesAndPrices
 ORDER BY PropertyType, HouseSalesAndPrices
 """
 result7 = duckdb.query(query7).to_df()
-print("\n7️⃣ Average prices by property type")
+print("\n Average prices by property type")
 print(result7)
 
 
@@ -150,7 +150,7 @@ ORDER BY total_sales DESC
 LIMIT 5
 """
 result8 = duckdb.query(query8).to_df()
-print("\n8️⃣ Top 5 years with highest sales")
+print("\n Top 5 years with highest sales")
 print(result8)
 
 
@@ -164,7 +164,7 @@ GROUP BY Year
 ORDER BY Year
 """
 result9 = duckdb.query(query9).to_df()
-print("\n9️⃣ Price difference between mean and lower quartile")
+print("\n Price difference between mean and lower quartile")
 print(result9)
 
 
@@ -179,5 +179,5 @@ GROUP BY Year
 ORDER BY price_rank
 """
 result10 = duckdb.query(query10).to_df()
-print("\n🔟 Ranking years by median price")
+print("\n Ranking years by median price")
 print(result10)
